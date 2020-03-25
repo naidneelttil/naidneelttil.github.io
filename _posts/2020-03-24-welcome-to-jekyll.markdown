@@ -11,7 +11,7 @@ Publish the projects that you have completed, that you're working on, that you'v
 The tool I'm going to use to accomplish this is the static site generator is Jekyll.
 
 Jekyll is a ruby gem that generates blog sites. I am using this and the github.io feature to host my blog. Of course, I could have used wordpress or something simmilar with less set up, but where is the 'fun' in that? 
-If you want to checkout Jekyll, just go to [this site][jekyll-docs] 
+If you want to checkout Jekyll, just go to [this site.][jekyll-docs] 
 
 This also means that this blog is basically constantly in development as I learn how to use it. This is the unfortunate side effect to the deep end approach to learning.
 
@@ -19,9 +19,9 @@ Alright so without further a do, I'm starting Linux from Scrach and documenting 
 
 My set up so far is that I've spinned up a virtualbox machine with a current project of Lubuntu and I'm following the Linux From Scratch Version 9.1-systemd book. apart from basic linux skills I have basically no expierence building from source, so this should be fun!
 
-I'll be /trying/ to update atleast every week, if not more frequently, so stay tuned!
+I'll be /trying/ to update atleast every week, if not more frequently, so stay tuned.
 
-shoutout to the youtuber gogoat100, who made [this video][lfs] that convinced me to attempt this project five years ago! Finally going to have a go at it!
+shoutout to the youtuber gogoat100, who made [this video][lfs] that convinced me to attempt this project five years ago! Finally going to have a go at it.
 
 
 [lfs]: https://youtube.com/watch?v=52amqsFcWzY 
