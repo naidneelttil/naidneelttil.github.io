@@ -2,6 +2,7 @@
 ---
 layout: post
 title: "Writeup for VirSecCTF 2020"
+date:   2020-04-04 16:34:35 -0400
 categories: [CTF]
 ---
 
@@ -13,7 +14,7 @@ Details: We hear something beeping... is there something in the oven?
 Connect here: http://jh2i.com:50036.
 This takes you to this site, where a bomb is supposed to go off.
   
-[image](/assets/image1.png)
+[image](/assets/image1.png){:class="img-responsive"}
 
 
 When you click on the link to defuse the bomb, you get redirected to detonate.php
