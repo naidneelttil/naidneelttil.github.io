@@ -19,7 +19,7 @@ Alright so without further a do, I'm starting Linux from Scrach and documenting 
 
 My set up so far is that I've spinned up a virtualbox machine with a current project of Lubuntu and I'm following the Linux From Scratch Version 9.1-systemd book. apart from basic linux skills I have basically no expierence building from source, so this should be fun!
 
-I'll be /trying/ to update atleast every week, if not more frequently, so stay tuned.
+I'll be **trying** to update atleast every week, if not more frequently, so stay tuned.
 
 shoutout to the youtuber gogoat100, who made [this video][lfs] that convinced me to attempt this project five years ago! Finally going to have a go at it.
 
