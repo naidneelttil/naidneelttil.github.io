@@ -8,7 +8,7 @@ categories: CTF
 Hello everyone! So, taking a slight break from my Linux From Scratch journey (I know I just started. But eeeeey, CTFS tho) to compete solo in VirSecCon CTF 2020. So, here are all the writeups for the challenges I got. 
 
 
-##Countdown for 60 points. Category: Web 
+## Countdown for 60 points. Category: Web 
 
 
 **Details: We hear something beeping... is there something in the oven?
@@ -37,7 +37,7 @@ And then when you try to detonate the bomb, you get the flag.
 ![image](/assets/image4.png)
 
 
-##Hidden for 60 points. Category: Miscellaneous
+## Hidden for 60 points. Category: Miscellaneous
 
 
 **Details: What secret is this server hiding?!
@@ -64,7 +64,7 @@ However, that’s nothing that tab completion can’t solve. We can cat that fil
 
 
 
-##Read the Rules for 5 points. Category : Warmup
+## Read the Rules for 5 points. Category : Warmup
 
 
 **Please follow the rules for this CTF!
@@ -76,7 +76,7 @@ Time to look at the page source for this, and sure enough, it’s in a comment
 ![image](/assets/image8.png)
 
 
-##Believe your Eyes for 10 points. Category: Warmup
+## Believe your Eyes for 10 points. Category: Warmup
 
 
 **Details: You would not believe your eyes...
@@ -89,7 +89,7 @@ I will also admit that I kinda stumbled into this one. Windows, seemed to automa
 ![image](/assets/image9.png)
 
 
-##DotCom Scavenger Hunt for 25 points. Category: Warmup
+## DotCom Scavenger Hunt for 25 points. Category: Warmup
 
 **Details: It’s a website scavenger hunt!
 Download the file below.**
@@ -117,10 +117,14 @@ I didn’t find it with grep, but yeah, I’d imagine that would be smoother.
 
 I also got **Linux Kiosk** but couldent submit the flag because time had run out (I AM LIVID)
 When man command is done it uses less pager to display the documentation. Well you can use it to your advangate and run unix commands in less. All you must do is
-' : ! <commands>'
+
+> : ! <commands>
+
 A few rounds of this and I found out the flag. With
-':! Pwd; ls -a ; cat flag.txt'
- Beating myself up on not putting the flag in fast enough though. I’m salty, but at least you all  know I could solve it.
+
+> :! Pwd; ls -a ; cat flag.txt
+
+Beating myself up on not putting the flag in fast enough though. I’m salty, but at least you all  know I could solve it.
 
 
 ![image](/assets/image13.png)
