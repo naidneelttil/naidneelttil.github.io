@@ -61,13 +61,13 @@ Doing a  ls -a (listing all files including hidden ones) on the box gets:
 You see that .secret boys? We got ‘em. The command cd is restricted for some reason though   
 
 
-![image](/assets/image6.png)
+![image](/assets/image7.png)
 
 
 However, that’s nothing that tab completion can’t solve. We can cat that file!
   
 
-![image](/assets/image7.png)
+![image](/assets/image6.png)
 
 
 
