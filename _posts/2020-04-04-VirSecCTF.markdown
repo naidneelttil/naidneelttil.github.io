@@ -84,7 +84,7 @@ Connect here: http://ctf.virseccon.com/rules.**
 This was very easy, while the page itself didn’t have the code, spelled out for you, instead, saying ‘If you look closely, you can even find a flag on this page!’
 Time to look at the page source for this, and sure enough, it’s in a comment
   
-![image](/assets/image8.png)
+![image](/assets/image9.png)
 
 
 
@@ -103,7 +103,7 @@ I will also admit that I kinda stumbled into this one. Windows, seemed to automa
 
 
   
-![image](/assets/image9.png)
+![image](/assets/image8.png)
 
 
 
@@ -119,19 +119,19 @@ Download the file below.**
 The file downloaded was 'dotcom_scavenger_hunt.zip'. when extracted, it was a folder with all the website parts for a site called nothinginthebox.com, it essentially sells ~nothing~
 
 
-![image](/assets/image10.png)
+![image](/assets/image12.png)
  
 
 After finding nothing interesting in the index.html, PAY.html, or robots.txt, (or at least nothing that popped out to me) I turned to the JavaScript.
 
 
-![image](/assets/image11.png)
+![image](/assets/image10.png)
  
 
 The .min.js extension popped out to me as I did a problem similar to this where once putting the .min.js file in a JS beautifier (I like https://beautifier.io/)  doing a /f to find LLS, the flag format, gave me the flag. 
 
 
-![image](/assets/image12.png)
+![image](/assets/image11.png)
  
 
 I didn’t find it with grep, but yeah, I’d imagine that would be smoother.
