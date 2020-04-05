@@ -23,6 +23,7 @@ I'll be /trying/ to update atleast every week, if not more frequently, so stay t
 
 shoutout to the youtuber gogoat100, who made [this video][lfs] that convinced me to attempt this project five years ago! Finally going to have a go at it.
 
+-naidneelttil
 
 [lfs]: https://youtube.com/watch?v=52amqsFcWzY 
 [jekyll-docs]: https://jekyllrb.com
