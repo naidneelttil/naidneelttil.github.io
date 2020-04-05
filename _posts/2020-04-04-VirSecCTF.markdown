@@ -8,6 +8,9 @@ categories: CTF
 Hello everyone! So, taking a slight break from my Linux From Scratch journey (I know I just started. But eeeeey, CTFS tho) to compete solo in VirSecCon CTF 2020. So, here are all the writeups for the challenges I got. 
 
 
+---
+
+
 ## Countdown for 60 points. Category: Web 
 
 
@@ -22,19 +25,23 @@ This takes you to this site, where a bomb is supposed to go off.**
 When you click on the link to defuse the bomb, you get redirected to detonate.php
   
 
-![image](/assets/image2.png)
+![image](/assets/image3.png)
 
 
 To solve this challenge, I changed the value of the detonate_time cookie from 1586040368 to a bunch of nines to delay the time:
 
 
-![image](/assets/image3.png) 
+![image](/assets/image2.png) 
 
 
 And then when you try to detonate the bomb, you get the flag.
   
 
-![image](/assets/image4.png)
+![image](/assets/image5.png)
+
+
+---
+
 
 
 ## Hidden for 60 points. Category: Miscellaneous
@@ -48,7 +55,7 @@ ssh user@jh2i.com -p 50015 # password is 'userpass'**
 Doing a  ls -a (listing all files including hidden ones) on the box gets:
   
 
-![image](/assets/image5.png)
+![image](/assets/image4.png)
 
 
 You see that .secret boys? We got ‘em. The command cd is restricted for some reason though   
@@ -64,6 +71,10 @@ However, that’s nothing that tab completion can’t solve. We can cat that fil
 
 
 
+---
+
+
+
 ## Read the Rules for 5 points. Category : Warmup
 
 
@@ -76,6 +87,11 @@ Time to look at the page source for this, and sure enough, it’s in a comment
 ![image](/assets/image8.png)
 
 
+
+---
+
+
+
 ## Believe your Eyes for 10 points. Category: Warmup
 
 
@@ -85,8 +101,14 @@ Download the file below.**
 The file was called 'belive_your_eyes.rar'. while the .rar filetype makes you think that it was a compressed file, checking the type of file with properties shows that it can be open with VLC.  And behold, our flag! 
 I will also admit that I kinda stumbled into this one. Windows, seemed to automatically recognize that the file extension was a lie, so when I tried to extract it, the software wouldn’t let me, except with VLC.
 
+
   
 ![image](/assets/image9.png)
+
+
+
+---
+
 
 
 ## DotCom Scavenger Hunt for 25 points. Category: Warmup
@@ -115,10 +137,16 @@ The .min.js extension popped out to me as I did a problem similar to this where 
 I didn’t find it with grep, but yeah, I’d imagine that would be smoother.
 
 
-I also got **Linux Kiosk** but couldent submit the flag because time had run out (I AM LIVID)
-When man command is done it uses less pager to display the documentation. Well you can use it to your advangate and run unix commands in less. All you must do is
 
-> : ! <commands>
+
+---
+
+
+
+I also got **Linux Kiosk** but couldent submit the flag because time had run out (I AM LIVID)
+When man command is done it uses less pager to display the documentation. Well you can use it to your advangate and run unix commands in less. All you must do is enter this before your commands
+
+> : ! 
 
 A few rounds of this and I found out the flag. With
 
