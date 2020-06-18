@@ -15,7 +15,7 @@ There are a bit of things that I do get. Chroot-ing into an environment is somet
 
 Using the provided input to figure out the name of the dynamic linker:
 
-readelf -l /bin/ls | grep interpreter
+'readelf -l /bin/ls | grep interpreter'
 
 
 ![image](/assets/LFSpart3/image7.png)
