@@ -15,9 +15,6 @@ There are a bit of things that I do get. Chroot-ing into an environment is somet
 
 Using the provided input to figure out the name of the dynamic linker:
 
-' readelf -l /bin/ls | grep interpreter '
-
-
 ![image](/assets/LFSpart3/image7.png)
 
 You can see that the interpreter I have is /lib64/ld-x86-64.so.2, so I have a 64-bit system.
