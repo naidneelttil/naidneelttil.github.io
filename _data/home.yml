@@ -5,41 +5,30 @@ navbar_entries:
   - title: blog
     url: blog
 
-  - title: website
-    url: https://www.abhinav.co
-
 project_entries:
-  - title: Project 1
-    url: overview-post
-    desc: This is an example project, configured in _data/home.yml
-
-  - title: Project 2
-    url: overview-post
-    desc: Projects are shown in card layout
-
-  - title: Project 3
-    url: overview-post
-    desc: You can control visibility from _config.yml file
-
-  - title: Project 4
-    url: overview-post
-    desc: This project uses highlight markup, configured in _data/home.yml
+  - title: RustHack
+    url: rusthack-default-post
+    desc: Making a multiplayer nethack-style game in Rust, a language I hardly know.
     highlight: WIP
 
-  - title: Project 5
-    url: overview-post
-    desc: Moonwalk also has horizontal list (used in header and footer)
+  - title: Skill-Issue Chip 8
+    url: chip8-default-post
+    desc: Learning low level concept by building a chip-8 emulator, in a language I hardly know.
     highlight: WIP
+  
+  - title: CTF and Wargame Writeups
+    url: ctf-default-post
+    desc: one easy place where you can find all the writeups I have ever done
 
-  - title: Project 6
-    url: overview-post
-    desc: It also has a scalable vertical list (in case you need it)
-
+  - title: General Linux
+    url: linux-default-post
+    desc: one place to find all my adventures using and abusing linux
+ 
 old_project_entries:
-  - title: Soopr
-    url: https://www.soopr.co
-    desc: Delight your readers - add beautiful share and like buttons easily to your websites 
-    highlight: NEW
+  - title: LFS (linux from scratch)
+    url: lfs-default-post
+    desc: My attempts at getting a working Linux from Scratch instance.
+    highlight: Hiatus
 
   - title: Cookie
     url: https://github.com/abhinavs/cookie
@@ -54,17 +43,10 @@ old_project_entries:
     desc: The better people know you, the better they collaborate
 
 footer_entries:
-  - title: abhinav's homepage
-    url: https://www.abhinav.co
-
-  - title: twitter
-    url: https://twitter.com/abhinav
-
   - title: github
-    url: https://github.com/abhinavs
+    url: https://github.com/naidneelttil
 
-  - title: feed
-    url: feed.xml
+
 
 misc_entries:
   - title: this is an example vertical list
@@ -79,23 +61,5 @@ misc_entries:
   - title: Blog posts
     post_list: true
     url: false
-
-  - title: moonwalk on the Internet
-    url: false
-    entries:
-      - title: on Github
-        url: https://github.com/abhinavs/moonwalk
-
-      - title: originally built for abhinav's homepage
-        url: https://www.abhinav.co
-
-      - title: this list is scalable and can be nested
-        url: false
-        entries:
-          - title: this is nested inside a nested list
-            url: false
-
-          - title: it is easy to use, see _data/home.yml to see how to configure it.
-            url: false
 
 
