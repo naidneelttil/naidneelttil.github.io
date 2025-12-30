@@ -167,11 +167,15 @@ for _ in range(150):
 
 A receiver id of 2 to the power of 63, in this case it overflows and becomes negative. 
 
-![][image19]
+```go
+                for rows.Next() {
+                        user := User{}
+                        rows.Scan(&user.Name, &user.ID)
+                        users = append(users, user)
+                }
+```
 
 In this rows.Scan line, reading it into the Receiver variable, it can end up not being correct and not correctly complete the conditionals. 
-
-![][image20]
 
 So what did we learn:
 
