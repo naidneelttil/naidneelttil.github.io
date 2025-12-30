@@ -61,11 +61,11 @@ This is what I am greeted with. The backend is written in Go, and we have a coup
 
                 http.Redirect(w, r, "/?msg=Too+Poor+For+Flag", http.StatusFound)
         })
-     ```
+```
 
 Find a way to hit this POST endpoint and get a user with a sum of 1337 credits to get the flag. OK. 
 
-Except we have an issue there isn’t a way (via the typical flow of the program) to actually get this kind of money to circulate.  We have a limit of 5 extra users \+ system (which is always broke) and the system gives each user only 10 credits. 
+ Except we have an issue there isn’t a way (via the typical flow of the program) to actually get this kind of money to circulate.  We have a limit of 5 extra users and system (which is always broke) and the system gives each user only 10 credits. 
 
 
 ```go
@@ -88,7 +88,7 @@ Except we have an issue there isn’t a way (via the typical flow of the program
 
                 http.Redirect(w, r, "/?msg=User+Created", http.StatusFound)
         })
-       ```
+```
 
  I was disheartened that input into the tables have the VALUES (?, ?, ?, ?, ?) syntax \-- properly sanitizing against SQL injections-- but In the source code there is a plea from the author that they haven’t ‘done db transactions properly’ so lets check that out quickly.
 
@@ -97,7 +97,7 @@ func main() {
         initDB()
 
         // Sorry, I still haven't learned DB transactions :/
-    ```
+```
 
 So checking this out, we find that there are straight up no changed values per user, they just keep track of transactions and manually calculate how much people have based on those transactions. 
 
