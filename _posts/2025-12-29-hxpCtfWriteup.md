@@ -42,21 +42,90 @@ Success\! I finally get myself an instance running and I can connect to it.
 
 This is what I am greeted with. The backend is written in Go, and we have a couple things to contend with. First off, looking at the source files, the goal is obvious.
 
-![][image9]
+
+```go
+     http.HandleFunc("POST /flag", func(w http.ResponseWriter, r *http.Request) {
+                mutex.Lock()
+                defer mutex.Unlock()
+
+                r.ParseForm()
+
+                id, _ := strconv.ParseInt(r.Form.Get("id"), 10, 64)
+                sum := Sum(id)
+                if sum >= 1337 {
+                        flag, _ := os.ReadFile("flag.txt")
+
+                        http.Redirect(w, r, "/?msg="+string(flag), http.StatusFound)
+                        return
+                }
+
+                http.Redirect(w, r, "/?msg=Too+Poor+For+Flag", http.StatusFound)
+        })
+     ```
 
 Find a way to hit this POST endpoint and get a user with a sum of 1337 credits to get the flag. OK. 
 
 Except we have an issue there isn’t a way (via the typical flow of the program) to actually get this kind of money to circulate.  We have a limit of 5 extra users \+ system (which is always broke) and the system gives each user only 10 credits. 
 
-![][image10]
+
+```go
+       demoUserLimit := 5
+        http.HandleFunc("POST /signup", func(w http.ResponseWriter, r *http.Request) {
+                mutex.Lock()
+                defer mutex.Unlock()
+
+                if demoUserLimit <= 0 {
+                        http.Redirect(w, r, "/?msg=Demo+Version+Limit+Reached", http.StatusFound)
+                        return
+                }
+                demoUserLimit -= 1
+
+                r.ParseForm()
+
+                res, _ := db.Exec("INSERT INTO users (name, id) VALUES (?, ?)", r.Form.Get("name"), r.Form.Get("id"))
+                id, _ := res.LastInsertId()
+                db.Exec("INSERT INTO transactions (subject, amount, sender, receiver) VALUES (?, ?, ?, ?)", "Gift from the system", 10, 1, id)
+
+                http.Redirect(w, r, "/?msg=User+Created", http.StatusFound)
+        })
+       ```
 
  I was disheartened that input into the tables have the VALUES (?, ?, ?, ?, ?) syntax \-- properly sanitizing against SQL injections-- but In the source code there is a plea from the author that they haven’t ‘done db transactions properly’ so lets check that out quickly.
 
-![][image11]
+```go
+func main() {
+        initDB()
+
+        // Sorry, I still haven't learned DB transactions :/
+    ```
 
 So checking this out, we find that there are straight up no changed values per user, they just keep track of transactions and manually calculate how much people have based on those transactions. 
 
-![][image12]
+```go
+func Sum(userID int64) uint64 {
+        if userID == 1 { // System is always bankrupt :/
+                return 0
+        }
+
+        rows, _ := db.Query("SELECT amount, receiver, sender FROM transactions")
+        defer rows.Close()
+
+        var sum uint64
+
+        for rows.Next() {
+                transactions := transactions{}
+                rows.Scan(&transactions.Amount, &transactions.Receiver, &transactions.Sender)
+
+                if transactions.Receiver == userID {
+                        sum += transactions.Amount
+                } else if transactions.Sender == userID {
+                        sum -= transactions.Amount
+                }
+        }
+
+        return sum
+}
+```
 
 Got me wondering… is it possible to just have fraudulent transactions?? Can I give my user negative amounts of money??
 
@@ -70,8 +139,17 @@ That is a 200 status error message \-- but it doesn’t show up like that. Tryin
 
 Taking a close look at the code, it looks like the challenge writers thought of that, and made sure the input was a go uint parse. Dammit.
 
-![][image17]
+```go
+        http.HandleFunc("POST /transfer", func(w http.ResponseWriter, r *http.Request) {
+                mutex.Lock()
+                defer mutex.Unlock()
 
+                r.ParseForm()
+
+                sender, _ := strconv.ParseInt(r.Form.Get("sender"), 10, 64)
+                amount, _ := strconv.ParseUint(r.Form.Get("amount"), 10, 64)
+
+```
 Now I didn’t get this challenge when it was running. This was as far as I had gone, along with trying to analyze the rest of the code for possible run condition errors (is that the proper way to do mutex in go?) \-- but at this point, if you did the challenge you know that the answer is right in front of my face with the picture above. You are telling me you sanitize for negatives in the amount-- but not for sender, ie. an id input? 🤔
 
 And indeed by the end the solution is exploiting the fact. Shout out to nikiosts  
